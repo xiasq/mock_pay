@@ -1,0 +1,49 @@
+[
+  {
+    "description" : "测试方法一",
+    "request" :
+    {
+      "uri" : "/test1",
+      "method" : "post",
+      "check":"true",
+      "forms" :
+        {
+          "mobile" : "aa",
+          "cdd" : "bb"
+        }
+
+    },
+    "response" :
+    {
+      "status" : 200,
+      "json" :
+      {
+        "status" : "success",
+        "errorinfo" : {"srvAuthCode" : "123456"}
+      }
+    }
+  },
+  {
+    "description" : "测试方法2",
+    "request" :
+    {
+      "uri" : "/test2",
+      "method":"post",
+      "check":"false",
+      "forms" :{
+        "parameter" : "{\"bank_name\":\"中国银行雨花区植物园支行\",\"bank_type\":{\"match\":\"\\w*\"}}"
+      }
+    },
+    "response" :
+    {
+      "status" : 200,
+      "json" :
+        {
+          "errorInfo":"成功啦啦",
+          "status":"error"
+        }
+    }
+  }
+]
+
+
